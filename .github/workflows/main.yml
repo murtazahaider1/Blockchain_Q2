@@ -1,26 +1,32 @@
-name: Go
+name: Go Build and Test
 
 on:
   push:
-    branches-ignore:
-      - 'Dev'
+    branches: [ main, Dev ]
   pull_request:
+    branches: [ main, Dev ]
 
 jobs:
-
-  build:
-    name: Build
+  build-and-test:
+    name: Build and Test
     runs-on: ubuntu-latest
+
     steps:
+    - name: Check out code
+      uses: actions/checkout@v2
+
     - name: Set up Go
       uses: actions/setup-go@v2
       with:
-        go-version: 1.15
-    - name: Check out code into the Go module directory
-      uses: actions/checkout@v2
+        go-version: '^1.16' 
+
     - name: Get dependencies
       run: go mod download
+      env:
+        GO111MODULE: on
+
     - name: Build
-      run: go build ./...
-    - name: Test
-      run: go test ./... -cover
+      run: go build -v ./...
+    
+    - name: Run tests
+      run: go test -v ./...
