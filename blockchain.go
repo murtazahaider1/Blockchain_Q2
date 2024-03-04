@@ -21,9 +21,7 @@ func AddBlock(data string) {
     Blockchain = append(Blockchain, newBlock)
 }
 
-// ModifyBlock is not a standard blockchain operation due to immutability of blocks.
-// However, for educational purposes, here's a simple way to modify a block's data.
-// This function does not recompute hashes, so it will break the chain's integrity.
+
 func ModifyBlock(index int, newData string) {
     if index < len(Blockchain) {
         Blockchain[index].Data = newData
