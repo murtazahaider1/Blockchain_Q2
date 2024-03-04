@@ -11,7 +11,7 @@ func init() {
 func DisplayAllBlocks() {
     for _, block := range Blockchain {
         fmt.Printf("Index: %d\nTimestamp: %s\nData: %s\nPrevHash: %s\nHash: %s\n", block.Index, block.Timestamp, block.Data, block.PrevHash, block.Hash)
-        fmt.Println("------------------------------------------------")
+        fmt.Println("-----------------------------------------------")
     }
 }
 
