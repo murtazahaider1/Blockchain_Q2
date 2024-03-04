@@ -5,7 +5,6 @@ import (
     "github.com/murtazahaider1/Blockchain_Q2/Dev"
 )
 
-
 func main() {
     blockchain.AddBlock("First Block after Genesis")
     blockchain.AddBlock("Second Block after Genesis")
