@@ -2,7 +2,7 @@ package main
 
 import (
     "fmt"
-    "github.com/murtazahaider1/Blockchain_Q2/Dev"
+    "github.com/murtazahaider1/Blockchain_Q2"
 )
 
 func main() {
